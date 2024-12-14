@@ -419,6 +419,10 @@ public class AcidReload : IReload
 
 ## Conclusion
 
-This implementation follows the **Strategy Design Pattern** to simplify and modularize the behavior of guns in an FPS game. By encapsulating `Reload` behavior into separate strategies, the design becomes more flexible, reusable, and extensible, all while promoting clean and maintainable code.
-   
+This implementation follows the **Strategy Design Pattern** to simplify and modularize the behavior of guns in an FPS game. By encapsulating `Reload` behavior into separate strategies,
+the design becomes more flexible, reusable, and extensible, all while promoting clean and maintainable code.
+
+# A Message from Northstar
+## "Thankyou for reading! I cant wait to see you in chapter world! Have fun being epic with OOP!" 
+![Northstar the awesome amazing cute catgirl](Images/Catgirl.png)
    
