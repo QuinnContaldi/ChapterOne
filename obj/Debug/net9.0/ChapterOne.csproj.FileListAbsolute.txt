@@ -1,0 +1,15 @@
+C:\Users\julia\RiderProjects\StrategyDesignPattern\ChapterOne\bin\Debug\net9.0\ChapterOne.exe
+C:\Users\julia\RiderProjects\StrategyDesignPattern\ChapterOne\bin\Debug\net9.0\ChapterOne.deps.json
+C:\Users\julia\RiderProjects\StrategyDesignPattern\ChapterOne\bin\Debug\net9.0\ChapterOne.runtimeconfig.json
+C:\Users\julia\RiderProjects\StrategyDesignPattern\ChapterOne\bin\Debug\net9.0\ChapterOne.dll
+C:\Users\julia\RiderProjects\StrategyDesignPattern\ChapterOne\bin\Debug\net9.0\ChapterOne.pdb
+C:\Users\julia\RiderProjects\StrategyDesignPattern\ChapterOne\obj\Debug\net9.0\ChapterOne.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\julia\RiderProjects\StrategyDesignPattern\ChapterOne\obj\Debug\net9.0\ChapterOne.AssemblyInfoInputs.cache
+C:\Users\julia\RiderProjects\StrategyDesignPattern\ChapterOne\obj\Debug\net9.0\ChapterOne.AssemblyInfo.cs
+C:\Users\julia\RiderProjects\StrategyDesignPattern\ChapterOne\obj\Debug\net9.0\ChapterOne.csproj.CoreCompileInputs.cache
+C:\Users\julia\RiderProjects\StrategyDesignPattern\ChapterOne\obj\Debug\net9.0\ChapterOne.sourcelink.json
+C:\Users\julia\RiderProjects\StrategyDesignPattern\ChapterOne\obj\Debug\net9.0\ChapterOne.dll
+C:\Users\julia\RiderProjects\StrategyDesignPattern\ChapterOne\obj\Debug\net9.0\refint\ChapterOne.dll
+C:\Users\julia\RiderProjects\StrategyDesignPattern\ChapterOne\obj\Debug\net9.0\ChapterOne.pdb
+C:\Users\julia\RiderProjects\StrategyDesignPattern\ChapterOne\obj\Debug\net9.0\ChapterOne.genruntimeconfig.cache
+C:\Users\julia\RiderProjects\StrategyDesignPattern\ChapterOne\obj\Debug\net9.0\ref\ChapterOne.dll
