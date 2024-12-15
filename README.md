@@ -8,9 +8,9 @@ put each of them into a separate class, and make their objects interchangeable. 
 verbose way to describe this design pattern, but stay with me! The big idea is to dynamically change
 behavior and decouple our code as much as possible using SOLID OOP principles
 
-1. **Why use this design pattern instead of interfaces or abstract methods?**
+1. **"Why use this design pattern instead of interfaces or abstract methods?"**
 
-- Interfaces and abstract methods are helpful! In fact we use them in our Abstract Gun Class, However they
+- Interfaces and abstract methods are helpful! In fact, we use interfaces in our Abstract Gun Class, However they
   can couple behavior too tightly.
 
 - The **Strategy** design pattern gives us a way to leverage **runtime polymorphism**
@@ -20,15 +20,16 @@ behavior and decouple our code as much as possible using SOLID OOP principles
 
 - By creating behaviors as separate classes that implement a common interface: we can encapsulate behavior and reuse it.
   This allows reduces the amount of code we would have to implement.
-- Every child that inherits from and abstract parent must implement the abstract functions.
-- Imagine if we had 40 futuristic guns all having to implement their own reload
+
+- Every child that inherits from and abstract parent must implement the abstract functions. Imagine if we had 40 futuristic guns all having to implement their own reload
   functions.
-- Imagine if we wanted to add some new bullets like Acid bullets.
-- Now Imagine if we want to change the
-  ammunition type mid game!
-- This further complicates the problem... Thats where our Strategy Design Pattern saves the day.
+
+- Imagine if we wanted to add some new bullets like Acid bullets. Now Imagine if we want to change the
+  ammunition type mid game! This further complicates the problem... Thats where our Strategy Design Pattern saves the day.
+
 - This also provides one more benefit dependency injection meaning that its easy to add another gun. We
   wont have to go into every gun class we made to implement a whack if statement to create different bullets.
+
 - **Why should we program to an interface, not an implementation?**
   Programming to an interface lets us depend on abstractions rather than concrete implementations. It improves
   flexibility,
@@ -39,25 +40,19 @@ behavior and decouple our code as much as possible using SOLID OOP principles
 - They obviously have their spot in programming however,
   they are not always the best solution. Interfaces and abstract classes are valid solutions but can become rigid when
   heavy logic is tied directly to the implementation.
-- *"What issue you may ask?"* **WAIT** I promise ill get to that soon.
-  Just keep that question in the back of your mind for now. Lets start out by exploring a primitive method to creating
-  guns
-  for our video game. Through this we can better understand the problem we will be facing
 
-### We want to create some guns for our SUPER COOL FPS GAME!
+- *"What are the issues? programming to an interface seems like a good solution"*  **WAIT** I promise ill get to that soon.
+  Just keep that question in the back of your mind for now. Let's start out by exploring a primitive method to creating
+  guns for our video game. Through this we can better understand the problem we will be facing
 
-Now to build off this lesson we are going to build up to using the Strategy Design Pattern. First we are going to
-utalize
-a primitive way to make our guns. Second we are going to use an interface and abstraction, then third we will use our
-super cool checking badass design pattern.
-Hmm lets look at a couple way we can do this, maybe our first though is to create a couple
-of gun classes and use their specific methods to fire the respective guns we have defined
-
-## A Primitive Implementation
+### We Want To Create Some Guns For Our SUPER COOL FPS GAME!
 
 ***
 
-```C#
+## A Primitive Implementation
+
+
+```csharp
 Public Class Shotgun
 {
     fire()
@@ -104,12 +99,10 @@ public PlayerGuns()
 ```
 ***
 
-## Exploring whats wrong with this code
+## Exploring What's Wrong With This Code
 
-*"Well this code works! So whats so wrong with this implementation?"*.
-
-This was a lesson taught to me in my freshman computer science courses just because
-it compiles does not mean it is correct. Even if it is correct other solutions can be **More** correct.
+This was a lesson taught to me in my freshman computer science courses. *"Just because
+it compiles does not mean it is correct"*. Even if it is correct other solutions can be **More** correct.
 by having our high level code depend on low level details we do a bad job of decoupling our code.
 Furthermore, we are unable to leverage runtime polymorphism to change guns mid game. Now think
 about adding a new gun. Things become far more complicated, as every class that we
@@ -122,8 +115,8 @@ Lets take a look at the problem for this code segment
 
 2. **Limited extensibility**
     - Adding a new gun requires modifying multiple places in your code. For instance:
-        - Create a new gun class.
-        - Update all methods (e.g., `ShootGuns`) to support the new gun by adding `if-else` or `switch` statements.
+    - Create a new gun class.
+    - Update all methods (e.g., `ShootGuns`) to support the new gun by adding `if-else` or `switch` statements.
 
 3. **No runtime polymorphism**
     - Switching guns at runtime is cumbersome because the logic for gun management is embedded in `PlayerGuns`. Adding
@@ -138,7 +131,7 @@ Lets take a look at the problem for this code segment
 "See! this is the perfect place to use an interface! We can create a parent gun class and have all the children
 define their respective fire and reload methods!"*
 
-That is not a bad idea, in fact I would consider that a correct solution. Lets give it a try! We will attempt to
+That is not a bad idea, in fact I would consider that a correct solution. Let's give it a try! We will attempt to
 write a solution that utilizes the IGun interface where child objects define their own reload and shoot behavior.
 ***
 
@@ -147,7 +140,7 @@ write a solution that utilizes the IGun interface where child objects define the
 You might think, _"Why not use an interface? Each gun can define its own `Fire()` and `Reload()` methods!"_ While that’s
 a better approach,
 
-```C#
+```csharp
 public abstract class Gun
 {
     public string name;
@@ -205,38 +198,41 @@ public class Pistol : Gun
 
 Interfaces and Abstract classes are useful in many scenarios to enforce functions that child classes must follow.
 As you can see this is not a bad use of inheritance with abstract classes, but adding more weapons like this is straightforward.
-However as the number of guns grows and additional unique behaviors are introduced, maintaining this structure will eventually 
-become a nightmare. For example in a game where we have multiple `Guns`, we can create a `Gun` class forcing each gun to implement methods 
+However, as the number of guns grows and additional unique behaviors are introduced, maintaining this structure will eventually
+become a nightmare. For example in a game where we have multiple `Guns`, we can create a `Gun` class forcing each gun to implement methods
 like `FireGun()` and `ReloadGun()`. Again we face similar problems to our first design.
 
 1. **Tight Coupling**
     - Each gun must implement its firing and reloading behavior directly. Even if multiple guns share the same logic (e.g., `ReloadGun()` for all guns using kinetic ammo), they must still duplicate that implementation.
-    - If we decide to modify the behavior for `ReloadGun` (lets say we introduce a new mechanic or ammo type), we must update every class where it’s implemented... Now that is what I call technical debt 
+    - If we decide to modify the behavior for `ReloadGun` (lets say we introduce a new mechanic or ammo type), we must update every class where it’s implemented... Now that is what I call technical debt
 
 2. **Inflexibility to Change at Runtime**
     - Suppose we want the player to change ammunition types mid-game (e.g., switching a sniper to use "Explosive Rounds" instead of "Kinetic Rounds"). With this design, it would require changing the logic for each gun manually or introducing unwieldy conditional statements.
 
 3. **Guns become harder to maintain**
-   - I know I keep beating a dead horse here, but I cant stress this enough, especially for game developers. This is a large violation of the **Open/Closed Principle**
-   Your code should be open for extension, but closed to modification. Who wants to track down every gun child object and add changes... not this developer. 
+    - I know I keep beating a dead horse here, but I cant stress this enough, especially for game developers. This is a large violation of the **Open/Closed Principle**
+      Your code should be open for extension, but closed to modification. Who wants to track down every gun child object and add changes... not this developer.
+
 4. **Lastly, just like the last design we have code duplication**
     - There is a lot of opinions on code duplication. Some love it because its more readable, and some hate it because it violates good OOP practices.
-   For me it depends, if only two or three classes have to duplicate the same logic. It may be worth your time to simple keep this implementation, instead of implementing
-   the strategy design pattern. 
-    - is the implementation of the strategy design pattern take more lines of code then just duplicating a small segment of code between classes?
-   maybe thats a situation where you could "get away with it." Just be careful, what is three spots of duplicated logic can quickly balloon to 100 spots.
+      For me, it depends, if only two or three classes have to duplicate the same logic. It may be worth your time to simple keep this implementation, instead of implementing
+      the strategy design pattern.
 
-## Using the Strategy Design Pattern: A Modular Approach to Gun Reload Behavior
+    - Is the implementation of the strategy design pattern take more lines of code then just duplicating a small segment of code between classes?
+      maybe that's a situation where you could "get away with it." Just be careful, what is three spots of duplicated logic can quickly balloon to 100 spots.
 
-### Introduction to the Strategy Design Pattern
+## Using The Strategy Design Pattern: A Modular Approach To Gun Reload Behavior
+
+### Introduction To The Strategy Design Pattern
 
 Consider a First-Person Shooter (FPS) game where guns have different types of reloading mechanisms. For example:
 - A **Sniper Rifle** uses *Kinetic Rounds*.
 - A **Plasma Gun** uses *Plasma Rounds*.
 
-Instead of tightly coupling the reload logic to each gun class, we can offload this behavior to separate `IReload` strategies.
-
----
+Instead of tightly coupling the reload logic to each gun class, we can offload this behavior to separate `IReload` strategies. We keep the `Fire()` method as an interface
+*"Oh? so we are replacing the Ireload method becomes our **strategy object**, instead of making it a function? we then can swap out the `IReload` with other **Strategy objects** during runtime!"*
+Yes that is exactly it! One more thing to note, is that `Fire()` is still a function that needs to be defined. The IReload interface contains a `ammunitionType`
+Since the ammunition we reload into the gun should dictate what round is fired from the gun.
 
 ## The Architecture
 
@@ -339,7 +335,7 @@ public class Sniper : Gun
 
 ---
 
-## Explanation of the Implementation
+## Explanation Of The Implementation
 
 1. **Flexibility Through Composition**  
    Each gun delegates its reloading behavior to a strategy object (`IReload`). This makes it easy to reuse the same reload logic across multiple gun types.
@@ -423,6 +419,6 @@ This implementation follows the **Strategy Design Pattern** to simplify and modu
 the design becomes more flexible, reusable, and extensible, all while promoting clean and maintainable code.
 
 # A Message from Northstar
-## "Thankyou for reading! I cant wait to see you in chapter world! Have fun being epic with OOP!" 
+## "Thankyou for reading! I cant wait to see you in the next chapter! Have fun being epic with OOP!"
 ![Northstar the awesome amazing cute catgirl](Images/Catgirl.png)
    
