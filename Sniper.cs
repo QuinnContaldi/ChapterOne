@@ -11,12 +11,12 @@ public class Sniper : Gun
     }
     public override void GunName()
     {
-        Console.WriteLine("Your current gun is a heavy duty" + name);
+        Console.WriteLine("Your current gun is a heavy duty " + name);
     }
 
     public override void FireGun()
     {
-        Console.WriteLine($"Your current gun is firing lets off a loud BANG firing a {reload.AmmunitionType} Round" );
+        Console.WriteLine($"Your current gun lets off a loud BANG firing a {reload.AmmunitionType} Heavy Round" );
     }
 
     public override void Reload()

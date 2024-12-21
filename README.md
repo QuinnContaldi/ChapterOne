@@ -9,44 +9,35 @@ verbose way to describe this design pattern, but stay with me! The big idea is t
 behavior and decouple our code as much as possible using SOLID OOP principles
 
 1. **"Why use this design pattern instead of interfaces or abstract methods?"**
-
-- Interfaces and abstract methods are helpful! In fact, we use interfaces in our Abstract Gun Class, However they
-  can couple behavior too tightly.
-
-- The **Strategy** design pattern gives us a way to leverage **runtime polymorphism**
-  by dynamically assign behavior!
+   - Interfaces and abstract methods are helpful! In fact, we use interfaces in our Abstract Gun Class, However they
+     can couple behavior too tightly.
+   - The **Strategy** design pattern gives us a way to leverage **runtime polymorphism**
+     by dynamically assign behavior!
 
 2. **How can we utilize runtime polymorphism with this strategy?**
+   - By creating behaviors as separate classes that implement a common interface: we can encapsulate behavior and reuse it.
+     This allows reduces the amount of code we would have to implement.
+   - Every child that inherits from and abstract parent must implement the abstract functions. Imagine if we had 40 futuristic guns all having to implement their own reload
+     functions.
+   - Imagine if we wanted to add some new bullets like Acid bullets. Now Imagine if we want to change the
+     ammunition type mid game! This further complicates the problem... Thats where our Strategy Design Pattern saves the day.
+   - This also provides one more benefit dependency injection meaning that its easy to add another gun. We
+     wont have to go into every gun class we made to implement a whack if statement to create different bullets.
 
-- By creating behaviors as separate classes that implement a common interface: we can encapsulate behavior and reuse it.
-  This allows reduces the amount of code we would have to implement.
+3. **Why should we program to an interface, not an implementation?**
+   - Programming to an interface lets us depend on abstractions rather than concrete implementations. It improves
+   flexibility,
+   - reduces coupling, and enables easy substitution when behavior changes without affecting the high-level components.
 
-- Every child that inherits from and abstract parent must implement the abstract functions. Imagine if we had 40 futuristic guns all having to implement their own reload
-  functions.
-
-- Imagine if we wanted to add some new bullets like Acid bullets. Now Imagine if we want to change the
-  ammunition type mid game! This further complicates the problem... Thats where our Strategy Design Pattern saves the day.
-
-- This also provides one more benefit dependency injection meaning that its easy to add another gun. We
-  wont have to go into every gun class we made to implement a whack if statement to create different bullets.
-
-- **Why should we program to an interface, not an implementation?**
-  Programming to an interface lets us depend on abstractions rather than concrete implementations. It improves
-  flexibility,
-  reduces coupling, and enables easy substitution when behavior changes without affecting the high-level components.
-
-3. **Interfaces are not a bad approach**
-
-- They obviously have their spot in programming however,
-  they are not always the best solution. Interfaces and abstract classes are valid solutions but can become rigid when
-  heavy logic is tied directly to the implementation.
-
-- *"What are the issues? programming to an interface seems like a good solution"*  **WAIT** I promise ill get to that soon.
-  Just keep that question in the back of your mind for now. Let's start out by exploring a primitive method to creating
-  guns for our video game. Through this we can better understand the problem we will be facing
+4. **Interfaces are not a bad approach**
+    - They obviously have their spot in programming however,
+     they are not always the best solution. Interfaces and abstract classes are valid solutions but can become rigid when
+     heavy logic is tied directly to the implementation.
+   - *"What are the issues? programming to an interface seems like a good solution"*  **WAIT** I promise ill get to that soon.
+     Just keep that question in the back of your mind for now. Let's start out by exploring a primitive method to creating
+     guns for our video game. Through this we can better understand the problem we will be facing
 
 ### We Want To Create Some Guns For Our SUPER COOL FPS GAME!
-
 ***
 
 ## A Primitive Implementation
@@ -217,10 +208,9 @@ like `FireGun()` and `ReloadGun()`. Again we face similar problems to our first 
     - There is a lot of opinions on code duplication. Some love it because its more readable, and some hate it because it violates good OOP practices.
       For me, it depends, if only two or three classes have to duplicate the same logic. It may be worth your time to simple keep this implementation, instead of implementing
       the strategy design pattern.
-
     - Is the implementation of the strategy design pattern take more lines of code then just duplicating a small segment of code between classes?
       maybe that's a situation where you could "get away with it." Just be careful, what is three spots of duplicated logic can quickly balloon to 100 spots.
-
+---
 ## Using The Strategy Design Pattern: A Modular Approach To Gun Reload Behavior
 
 ### Introduction To The Strategy Design Pattern
@@ -233,7 +223,7 @@ Instead of tightly coupling the reload logic to each gun class, we can offload t
 *"Oh? so we are replacing the Ireload method becomes our **strategy object**, instead of making it a function? we then can swap out the `IReload` with other **Strategy objects** during runtime!"*
 Yes that is exactly it! One more thing to note, is that `Fire()` is still a function that needs to be defined. The IReload interface contains a `ammunitionType`
 Since the ammunition we reload into the gun should dictate what round is fired from the gun.
-
+---
 ## The Architecture
 
 ### 1. The `Gun` Abstract Class
@@ -337,18 +327,20 @@ public class Sniper : Gun
 
 ## Explanation Of The Implementation
 
-1. **Flexibility Through Composition**  
-   Each gun delegates its reloading behavior to a strategy object (`IReload`). This makes it easy to reuse the same reload logic across multiple gun types.
+1. **The Strategy**  
+   - Each gun delegates its reloading behavior to a strategy object (`IReload`). This makes it easy to reuse the same reload logic across multiple gun types.
 
 2. **Runtime Behavior Changes**  
-   The reloading behavior (`reload`) can be swapped at runtime, allowing guns to dynamically change their ammunition without modifying the class itself.
+   - The reloading behavior (`reload`) can be swapped at runtime, allowing guns to dynamically change their ammunition without modifying the class itself.
 
 3. **Separation of Concerns**  
-   The `Gun` class focuses solely on managing gun-related behavior (e.g., firing, naming). Reload behavior is managed independently by `IReload` implementations.
+   - The `Gun` class focuses solely on managing gun-related behavior (e.g., firing, naming). Reload behavior is managed independently by `IReload` implementations.
 
 4. **Code Reusability**  
-   Multiple guns can share the same reload logic, reducing code duplication (e.g., both a sniper and a rifle could use `KeneticReload`).
+   - Multiple guns can share the same reload logic, reducing code duplication (e.g., both a sniper and a rifle could use `KeneticReload`).
 
+5. **For More Information** 
+    - Please read the first chapter of the Head First Design Patterns! If you are a student you can access this books for free at [O'RIELLY press](https://www.oreilly.com/member/login/?next=%2Fapi%2Fv1%2Fauth%2Fopenid%2Fauthorize%2F%3Fclient_id%3D814340%26redirect_uri%3Dhttps%3A%2F%2Fmembers.oreilly.com%2Fcallback%2F%26response_type%3Dcode%26scope%3Dopenid&locale=en)
 ---
 
 ## Usage Example
