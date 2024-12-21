@@ -5,24 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85c534aa-f925-455e-a2e1-055c3424cae5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Catgirl.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Catgirl.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KeneticReload.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KeneticReload.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LazerReload.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LazerReload.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlasmaReload.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PlasmaReload.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sniper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sniper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net9.0/ChapterOne.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net9.0/ChapterOne.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net9.0/ChapterOne.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net9.0/ChapterOne.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net9.0/ChapterOne.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net9.0/ChapterOne.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net9.0/ChapterOne.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net9.0/ChapterOne.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net9.0/ChapterOne.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net9.0/ChapterOne.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net9.0/ChapterOne.runtimeconfig.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/ChapterOne.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0/ChapterOne.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/ChapterOne.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0/ChapterOne.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/ChapterOne.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0/ChapterOne.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/ChapterOne.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0/ChapterOne.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/ChapterOne.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0/ChapterOne.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/ChapterOne.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/ChapterOne.genruntimeconfig.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/ChapterOne.pdb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/ChapterOne.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0/ChapterOne.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/ref/ChapterOne.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0/ref/ChapterOne.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/refint/ChapterOne.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0/refint/ChapterOne.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/ref/ChapterOne.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/refint/ChapterOne.dll" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +46,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -105,6 +103,7 @@
       <workItem from="1734208631171" duration="1294000" />
       <workItem from="1734374820536" duration="21000" />
       <workItem from="1734756643529" duration="5651000" />
+      <workItem from="1734773349670" duration="375000" />
     </task>
     <servers />
   </component>

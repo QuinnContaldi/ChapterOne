@@ -16,7 +16,7 @@ public class Sniper : Gun
 
     public override void FireGun()
     {
-        Console.WriteLine($"Your current gun lets off a loud BANG firing a {reload.AmmunitionType} Heavy Round" );
+        Console.WriteLine($"Your {name} lets off a loud BANG firing a {reload.AmmunitionType} Heavy Round" );
     }
 
     public override void Reload()
