@@ -211,7 +211,6 @@ like `FireGun()` and `ReloadGun()`. Again we face similar problems to our first 
     - Is the implementation of the strategy design pattern take more lines of code then just duplicating a small segment of code between classes?
       maybe that's a situation where you could "get away with it." Just be careful, what is three spots of duplicated logic can quickly balloon to 100 spots.
 ---
-## Using The Strategy Design Pattern: A Modular Approach To Gun Reload Behavior
 
 ### Introduction To The Strategy Design Pattern
 
