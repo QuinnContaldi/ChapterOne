@@ -218,7 +218,6 @@ like `FireGun()` and `ReloadGun()`. Again we face similar problems to our first 
 Consider a First-Person Shooter (FPS) game where guns have different types of reloading mechanisms. For example:
 - A **Sniper Rifle** uses *Kinetic Rounds*.
 - A **Plasma Gun** uses *Plasma Rounds*.
-
 Instead of tightly coupling the reload logic to each gun class, we can offload this behavior to separate `IReload` strategies. We keep the `Fire()` method as an interface
 *"Oh? so we are replacing the Ireload method becomes our **strategy object**, instead of making it a function? we then can swap out the `IReload` with other **Strategy objects** during runtime!"*
 Yes that is exactly it! One more thing to note, is that `Fire()` is still a function that needs to be defined. The IReload interface contains a `ammunitionType`
